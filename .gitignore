@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# distribution, compiled code library
+/dist/
+
+
+# === Start Other ===
+
+.vscode
+
+# Folder view configuration files
+.DS_Store
+**/.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+# === End Other ===
