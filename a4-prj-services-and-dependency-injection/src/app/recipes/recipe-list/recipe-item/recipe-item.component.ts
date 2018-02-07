@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Recipe } from '../../recipe.model';
+import { ReciperService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -11,16 +12,16 @@ export class RecipeItemComponent implements OnInit {
   // take recipe as an input
   @Input() recipe: Recipe;
 
-  // listen to this event from the outside. someone from outside can listen to this as its state changes
-  @Output() recipeSelected = new EventEmitter<void>();
 
-  constructor() { }
+
+  constructor(private recipeService: ReciperService) { }
 
   ngOnInit() {
   }
 
   onSelected(){
-    this.recipeSelected.emit();
+    // emit the recipe if user clicks on it
+    this.recipeService.recipeSelected.emit(this.recipe);
   }
 
 }
